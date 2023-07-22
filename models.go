@@ -23,3 +23,12 @@ type Room struct {
 	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP"`
 	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP"`
 }
+
+type Message struct {
+	ID        uint      `gorm:"primary_key;auto_increment"`
+	UserID    uint      `gorm:"not null"`
+	RoomID    uint      `gorm:"not null"`
+	Content   string    `gorm:"not null"`
+	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP"`
+	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP"`
+}
